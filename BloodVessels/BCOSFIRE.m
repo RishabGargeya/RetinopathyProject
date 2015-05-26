@@ -57,10 +57,10 @@ function [resp segresp resp1 resp2] = BCOSFIRE(image, filter1, filter2, preproce
 %   The image 01_test.tif is taken from the DRIVE data set, which can be 
 %   downloaded from: http://www.isi.uu.nl/Research/Databases/DRIVE/
 
-path(path,'./Gabor/');
-path(path,'./COSFIRE/');
-path(path,'./Preprocessing/');
-path(path,'./Performance/');
+path(path,'./BloodVessels/Gabor/');
+path(path,'./BloodVessels/COSFIRE/');
+path(path,'./BloodVessels/Preprocessing/');
+path(path,'./BloodVessels/Performance/');
 
 %% Model configuration
 % Prototype pattern

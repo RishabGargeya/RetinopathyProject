@@ -1,4 +1,5 @@
-image = double(imread('/Users/rishabgargeya/Desktop/database/DRIVE/training/images/28_training.tif')) ./ 255;
+image = double(imread('/Users/rishabgargeya/Desktop/database/DRIVE/training/images/28_training.tif'))...
+    ./ 255;
 % Symmetric filter params
 symmfilter = struct();
 symmfilter.sigma     = 2.4;
@@ -16,4 +17,4 @@ asymmfilter.alpha     = 0.1;
 % Tresholds values
 % DRIVE -> preprocessthresh = 0.5, thresh = 37
 [resp segresp r1 r2] = BCOSFIRE(image, symmfilter, asymmfilter, 0.5, 37);
-imshow(resp);
+imshow(segresp);

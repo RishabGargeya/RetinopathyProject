@@ -16,9 +16,9 @@ function [ ] = Application( )
 % EXAMPLE APPLICATION.
 
 % Example with an image from DRIVE data set
-image = double(imread('/Users/rishabgargeya/Desktop/database/DRIVE/training/images/21_training.tif')) ./ 255;
-%image = double(imread('/Users/rishabgargeya/Desktop/kaggle/sample/15_right.jpeg')) ./ 255;
-%image = imresize(image, [565 584]);
+%image = double(imread('/Users/rishabgargeya/Desktop/kaggle/sample/')) ./ 255;
+image = double(imread('/Users/rishabgargeya/Desktop/kaggle/sample/15_right.jpeg')) ./ 255;
+image = imresize(image, [565 584]);
 imshow(image)
 
 
@@ -41,7 +41,10 @@ asymmfilter.alpha     = 0.1;
 % DRIVE -> preprocessthresh = 0.5, thresh = 37
 % STARE -> preprocessthresh = 0.5, thresh = 40
 % CHASE_DB1 -> preprocessthresh = 0.1, thresh = 38
-[resp segresp r1 r2] = BCOSFIRE(image, symmfilter, asymmfilter, 0.5, 37);
+figure();
+imshow(image);
+[resp segresp r1 r2] = BCOSFIRE(image, symmfilter, asymmfilter, 0.9, 30);
+figure(2);
 imshow(segresp)
 %% Calculate Features
 stats = regionprops(segresp, 'FilledArea');

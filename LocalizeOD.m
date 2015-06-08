@@ -1,4 +1,5 @@
-im = im2double(imread('/Users/rishabgargeya/Desktop/database/DRIVE/training/images/28_training.tif'));
+%im = im2double(imread('/Users/rishabgargeya/Desktop/database/DRIVE/training/images/24_training.tif'));
+im = double(imread('/Users/rishabgargeya/Desktop/kaggle/sample/15_right.jpeg')) ./ 255;
 green = im(:,:,2);
 imshow(green)
 median = medfilt2(green, [3 3]);
